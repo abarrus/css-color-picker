@@ -1,2 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import { Styles, Input } from '@sveltestrap/sveltestrap';
+    let vali = $state("yargl");
+</script>
+<Styles />
+
+<Input bind:value={vali} />
+<p>{vali}</p>
