@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-    import { Card, Navbar, 
+    import { Styles, Card, Navbar, 
         NavbarBrand, 
         Nav, 
         NavItem, 
@@ -8,17 +8,18 @@
 
 	let { children } = $props();
 </script>
+<Styles />
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
 <Navbar color="light" light expand="md" class="fixed-top px-4">
-    <NavbarBrand href="/">CSS Color Picker</NavbarBrand>
+    <NavbarBrand>CSS Color Picker</NavbarBrand>
     
     <Nav class="ms-auto align-items-center" navbar>
         <NavItem>
-            <NavLink href="https://github.com/abarrus">
+            <NavLink href="https://github.com/abarrus/css-color-picker">
                 by abarrus
             </NavLink>
         </NavItem>
