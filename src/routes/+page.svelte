@@ -6,7 +6,7 @@
     let color = $state("#ff3e00");
 </script>
 
-<div class="d-flex gap-2">
+<div class="d-flex gap-2 mb-5">
     <Input bind:value={color} />
     <ColorPicker
         bind:hex={color}
