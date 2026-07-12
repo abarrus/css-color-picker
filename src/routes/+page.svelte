@@ -1,10 +1,7 @@
 <script>
     import { Input } from '@sveltestrap/sveltestrap';
 	import ColorPicker from 'svelte-awesome-color-picker';
-    import { getContext } from 'svelte';
-
-	// Retrieve the store using the same key string used in setContext
-	const appState = getContext('app-state');
+    import ClosestColor from '$lib/ClosestColor.svelte';
 
     let color = $state("#ff3e00");
 </script>
@@ -19,3 +16,4 @@
         --cp-border-color="lightgray"
     />
 </div>
+<ClosestColor {color}/>

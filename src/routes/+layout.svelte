@@ -1,22 +1,18 @@
 <script lang="ts">
-    import { setContext } from 'svelte'; // for light/dark mode
 	import favicon from '$lib/assets/favicon.svg';
     import {
         Styles, Card, Navbar, 
         NavbarBrand, Nav, NavItem, 
         NavLink, Button
     } from '@sveltestrap/sveltestrap';
-    import type { BackgroundColor } from '@sveltestrap/sveltestrap';
 
 	let { children } = $props();
 
     // toggle light/dark mode
-	let appState: Record<string, BackgroundColor> = $state({ theme: "dark" });
-    const darkMode = $derived(appState.theme === "dark");
+    let darkMode = $state(true);
     function toggleDarkMode() {
-        appState.theme = darkMode ? "light" : "dark";
+        darkMode = !darkMode;
     }
-	setContext('app-state', appState);
 </script>
 <Styles />
 
@@ -61,7 +57,7 @@
     </Nav>
 </Navbar>
 
-<div class="d-flex justify-content-center align-items-center vh-100 {darkMode ? "bg-dark" : ""}" data-bs-theme={appState.theme}>
+<div class="d-flex justify-content-center align-items-center vh-100 {darkMode ? "bg-dark" : ""}" data-bs-theme={darkMode ? "dark" : "light"}>
 	<Card class="p-3">
 		{@render children()}
 	</Card>
