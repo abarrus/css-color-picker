@@ -3,7 +3,7 @@
     import { getClosestColors } from '$lib/closestColor';
     let { color } = $props();
     
-    const closestColors = $derived(getClosestColors(color));
+    const closestColors = $derived(getClosestColors(color, 5));
 </script>
 
 <h3>Closest CSS Colors:</h3>
