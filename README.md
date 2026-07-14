@@ -9,5 +9,3 @@ This project was made using:
 
 # To Fix / Add / Change:
 - duplicate colors: try #c2bbaa and you'll see two darkgray and lightgray duplicates because of different spellings of gray. it should just say darkgray / darkgrey and not count them as 2
-- make it look good on horizontal mobile
-- mobile not scroll while selecting a color
