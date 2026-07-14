@@ -7,5 +7,5 @@ This project was made using:
 - [color-diff](https://www.npmjs.com/package/color-diff)
 
 
-# To Fix:
-- duplicate colors: try #c2bbaa and you'll see two darkgray and lightgray duplicates because of different spellings of gray
+# To Fix / Add / Change:
+- duplicate colors: try #c2bbaa and you'll see two darkgray and lightgray duplicates because of different spellings of gray. it should just say darkgray / darkgrey and not count them as 2

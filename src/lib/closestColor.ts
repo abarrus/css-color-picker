@@ -39,8 +39,18 @@ function getClosestColor(color: RGB, palette: RGB[]) {
     return closestRgb !== undefined ? palette.indexOf(closestRgb) : -1;
 }
 
+// either hex or css color, turns it to hex
+function toHex(color: string) {
+    return color in cssColors ?
+        cssColors[color as keyof typeof cssColors]
+        : color;
+}
+
 // give a hex code, get a list of CSS color names
-export function getClosestColors(color: string, count: number) {
+export function getClosestColors(ogColor: string, count: number) {
+    // color name to hex code if needed
+    const color = toHex(ogColor);
+
     const res = [];
     const rgbColor = hexToRgb(color);
     const palette = rgbCssColors();
@@ -49,9 +59,14 @@ export function getClosestColors(color: string, count: number) {
     for (let i = 0; i < count; i++) {
         const index = getClosestColor(rgbColor, palette);
         if (index !== -1) {
-            res.push(paletteNames[index]);
+            const colorName = paletteNames[index];
             palette.splice(index, 1);
             paletteNames.splice(index, 1);
+            if (colorName === ogColor) {
+                i--;
+                continue;
+            }
+            res.push(colorName);
         } else {
             break;
         }
