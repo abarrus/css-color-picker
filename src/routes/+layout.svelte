@@ -23,7 +23,7 @@
 
 <!-- color is for bg color, light/dark is for text generally -->
 <Navbar color={darkMode ? "dark-subtle" : "light"} light={!darkMode} dark={darkMode} expand="md" class="fixed-top px-4">
-    <div class="d-flex align-items-center gap-2">
+    <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-sm-2">
         <NavbarBrand class="mb-0">CSS Color Picker</NavbarBrand>
         <Nav navbar>
             <NavItem>
