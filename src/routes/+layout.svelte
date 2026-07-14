@@ -17,6 +17,7 @@
 <Styles />
 
 <svelte:head>
+    <title>CSS Color Picker - abarrus</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
