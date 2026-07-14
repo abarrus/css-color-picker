@@ -1,5 +1,6 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+    import { asset } from '$app/paths';
+    import favicon from '$lib/assets/favicon.svg';
     import {
         Styles, Card, Navbar, 
         NavbarBrand, Nav, NavItem, 
@@ -17,7 +18,7 @@
 <Styles />
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={asset(favicon)} />
 </svelte:head>
 
 <!-- color is for bg color, light/dark is for text generally -->
